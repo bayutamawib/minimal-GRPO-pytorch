@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemma-sync"
+version = "0.1.0"
+description = "Minimal PyTorch-only GRPO & RLVR for Calibrated Abstention in Clinical SLMs."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Narendra Bayutama Wibisono", email = "narendra.bayutama@example.com" },
+]
+keywords = [
+    "grpo",
+    "rlvr",
+    "clinical-ai",
+    "calibrated-abstention",
+    "sofa",
+    "alignment",
+    "pytorch",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+]
+
+dependencies = [
+    "torch>=2.2.0",
+    "transformers>=4.40.0",
+    "datasets>=2.18.0",
+    "peft>=0.10.0",
+    "accelerate>=0.28.0",
+    "sofa-eval",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.4.0",
+]
+quantize = [
+    "bitsandbytes>=0.43.0",
+]
+
+[project.urls]
+Repository = "https://github.com/narendrabayutamaw/gemma-sync"
+Paper = "https://doi.org/10.5281/zenodo.19913606"
+
+# ── tool configuration ────────────────────────────────────────────────
+
+[tool.setuptools.packages.find]
+include = ["grpo*", "data*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]

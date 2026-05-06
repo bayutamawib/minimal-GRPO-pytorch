@@ -1,0 +1,31 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyTorch & HuggingFace Models
+*.pt
+*.pth
+*.safetensors
+outputs/
+models/
+
+# Datasets
+medqa_dataset/
+*.csv
+*.jsonl
+
+# Logs & TensorBoard
+runs/
+wandb/
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
