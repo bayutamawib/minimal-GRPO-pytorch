@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>## Gemma-Sync</strong><br>
+  <strong>Gemma-Sync</strong><br>
   <em>Calibrated Abstention & Clinical Deferral via Minimal GRPO</em>
 </p>
 
